@@ -3,7 +3,7 @@
 
 int main(){
 	int len;
-	char input[100];
+	char input[10000];
 	scanf("%d", &len);
 	scanf(" %s", input);
 	for(int i=0;i<len;i++){
