@@ -1,7 +1,7 @@
-//대소문자 바꾸기
 #include <stdio.h>
 
-int main(){
+//대소문자 바꾸기
+void training_2(){
 	int len;
 	char input[10000];
 	scanf("%d", &len);
@@ -12,6 +12,10 @@ int main(){
 		else
 			input[i]-= 32;
 	}
-	printf("%s\n", input);
-	return 0;	
+	printf("%s\n", input);	
+}
+
+int main(){
+	training_2();
+	return 0;
 }
