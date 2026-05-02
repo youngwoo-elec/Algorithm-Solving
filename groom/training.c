@@ -15,7 +15,20 @@ void training_2(){
 	printf("%s\n", input);	
 }
 
+
+//큰 팩토리얼
+int training_5(){
+	int n; 
+	long long int n_fac=1;
+	scanf("%d", &n);
+	for(int i=n;i>=1;i--){
+		n_fac *= i;
+	}
+	printf("%lld",n_fac%1000000007);
+	return 0;
+}
+
 int main(){
-	training_2();
+	training_5();
 	return 0;
 }
