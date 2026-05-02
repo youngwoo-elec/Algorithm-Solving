@@ -22,9 +22,8 @@ int training_5(){
 	long long int n_fac=1;
 	scanf("%d", &n);
 	for(int i=n;i>=1;i--){
-		n_fac *= i;
+		n_fac = (n_fac * i)%10000007;
 	}
-	printf("%lld",n_fac%1000000007);
 	return 0;
 }
 
