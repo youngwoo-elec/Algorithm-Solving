@@ -83,8 +83,17 @@ int training_10_b(){
 	printf("%d", cnt);
 	return 0;
 }
-
-
+int training_10(){
+	int N, cnt=0;
+	int coins[] = {40,20,10,5,1};
+	int num_coin = sizeof(coins)/sizeof(coins[0]);
+	scanf("%d", &N);
+	for(int i=0;i<num_coin;i++){
+		cnt+=(N/coins[i]);
+		N%=coins[i];
+	}
+	printf("%d",cnt);
+}
 int main(){
 	training_6();
 	return 0;
