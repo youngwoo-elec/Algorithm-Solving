@@ -54,6 +54,36 @@ int training_6(){
 		return 0;
 }
 
+int training_10_b(){
+	int N;
+	int cnt =0;
+	scanf("%d", &N);
+	while(N>0){
+	if(N%40==0){
+			N -= 40;
+			cnt++;
+		}
+		else if(N%20==0){
+			N -= 20;
+			cnt++;
+		}
+		else if(N%10==0){
+			N -= 10;
+			cnt++;
+		}
+		else if(N%5==0){
+			N -= 5;
+			cnt++;
+		}
+		else if(N%1==0){
+			N -= 1;
+			cnt++;
+		}
+	}
+	printf("%d", cnt);
+	return 0;
+}
+
 int main(){
 	training_6();
 	return 0;
