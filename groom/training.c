@@ -59,23 +59,23 @@ int training_10_b(){
 	int cnt =0;
 	scanf("%d", &N);
 	while(N>0){
-	if(N%40==0){
+	if(N>=40){
 			N -= 40;
 			cnt++;
 		}
-		else if(N%20==0){
+		else if(N>=20){
 			N -= 20;
 			cnt++;
 		}
-		else if(N%10==0){
+		else if(N>=10){
 			N -= 10;
 			cnt++;
 		}
-		else if(N%5==0){
+		else if(N>=5){
 			N -= 5;
 			cnt++;
 		}
-		else if(N%1==0){
+		else if(N>=1){
 			N -= 1;
 			cnt++;
 		}
@@ -83,6 +83,7 @@ int training_10_b(){
 	printf("%d", cnt);
 	return 0;
 }
+
 
 int main(){
 	training_6();
