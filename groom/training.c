@@ -28,6 +28,7 @@ int training_5(){
 	return 0;
 }
 
+
 //숫자 제거 배열
 int training_6(){
 	    int N;
@@ -54,6 +55,37 @@ int training_6(){
 		return 0;
 }
 
+
+// 큰 숫자 순서로 인덱스 출력하기
+int training_7_b(){
+	int N;
+	scanf("%d", &N);
+	int arr[N], i_arr[N];
+	for(int i=0;i<N;i++){
+		scanf("%d", &arr[i]);
+		i_arr[i] = i+1;
+	}
+	for(int i=0;i<N-1;i++){
+		for(int j=N-1;j>i;j--){
+			if (arr[j-1]<arr[j]){
+				int tmp, i_tmp;
+				tmp = arr[j-1];  i_tmp = i_arr[j-1];
+				arr[j-1] = arr[j];  i_arr[j-1] = i_arr[j];
+				arr[j] = tmp;  i_arr[j] = i_tmp;
+			}
+		}
+	}
+	if(N>=3)
+		printf("%d %d %d", i_arr[0],i_arr[1],i_arr[2]);
+	else if(N==2)
+		printf("%d %d", i_arr[0], i_arr[1]);
+	else
+		printf("%d", i_arr[0]);
+	return 0;
+}
+
+
+// 잔돈 함수
 int training_10_b(){
 	int N;
 	int cnt =0;
@@ -94,6 +126,8 @@ int training_10(){
 	}
 	printf("%d",cnt);
 }
+
+
 int main(){
 	training_6();
 	return 0;
