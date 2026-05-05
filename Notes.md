@@ -16,4 +16,5 @@
 
 >### 📅 2026-05-05
 // training_7   큰 숫자 순서로 인덱스 출력하기
-- bubble sort 사용했더니 N 값이 클 때 timeout 발생
+- `bubble sort` 사용했더니 N 값이 클 때 timeout 발생  (O(N^2))
+- `quick sort` 사용해서 문제 해결   O(NlogN)
