@@ -84,6 +84,60 @@ int training_7_b(){
 	return 0;
 }
 
+int training_7(){
+void swap(int *a, int *b){
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+int partition(int arr[], int i_arr[], int low, int high){
+    int pivot = arr[low];
+    int i = low;
+    int j = high;
+
+    while(i<j){
+        while(arr[i]>=pivot&&i<high)
+            i++;
+        while(arr[j]<pivot)
+            j--;
+        if(i<j){
+            swap(&arr[i],&arr[j]);
+						swap(&i_arr[i],&i_arr[j]);
+				}
+    }
+    swap(&arr[low],&arr[j]);
+		swap(&i_arr[low],&i_arr[j]);
+    return j;
+}
+
+void quicksort(int arr[],int i_arr[], int low, int high){
+    if(low<high){
+        int pi = partition(arr,i_arr,low,high);
+        quicksort(arr,i_arr, low, pi-1);
+        quicksort(arr,i_arr, pi+1,high);
+    }
+}
+
+int main(){
+	int N;
+	scanf("%d", &N);
+	int arr[N], i_arr[N];
+	for(int i=0;i<N;i++){
+		scanf("%d", &arr[i]);
+		i_arr[i] = i+1;
+	}
+	quicksort(arr,i_arr,0,N-1);
+	
+	if(N>=3)
+		printf("%d %d %d", i_arr[0],i_arr[1],i_arr[2]);
+	else if(N==2)
+		printf("%d %d", i_arr[0], i_arr[1]);
+	else
+		printf("%d", i_arr[0]);
+	return 0;
+}
+
 
 // 잔돈 함수
 int training_10_b(){
