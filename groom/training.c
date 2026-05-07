@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MOD 1000000007
+
 //대소문자 바꾸기
 void training_2(){
 	int len;
@@ -111,33 +113,33 @@ int partition(int arr[], int i_arr[], int low, int high){
     return j;
 }
 
-void quicksort(int arr[],int i_arr[], int low, int high){
-    if(low<high){
-        int pi = partition(arr,i_arr,low,high);
-        quicksort(arr,i_arr, low, pi-1);
-        quicksort(arr,i_arr, pi+1,high);
-    }
-}
-
-int main(){
-	int N;
-	scanf("%d", &N);
-	int arr[N], i_arr[N];
-	for(int i=0;i<N;i++){
-		scanf("%d", &arr[i]);
-		i_arr[i] = i+1;
+	void quicksort(int arr[],int i_arr[], int low, int high){
+		if(low<high){
+			int pi = partition(arr,i_arr,low,high);
+			quicksort(arr,i_arr, low, pi-1);
+			quicksort(arr,i_arr, pi+1,high);
+		}
 	}
-	quicksort(arr,i_arr,0,N-1);
-	
-	if(N>=3)
-		printf("%d %d %d", i_arr[0],i_arr[1],i_arr[2]);
-	else if(N==2)
-		printf("%d %d", i_arr[0], i_arr[1]);
-	else
-		printf("%d", i_arr[0]);
-	return 0;
-}
 
+	int main(){
+		int N;
+		scanf("%d", &N);
+		int arr[N], i_arr[N];
+		for(int i=0;i<N;i++){
+			scanf("%d", &arr[i]);
+			i_arr[i] = i+1;
+		}
+		quicksort(arr,i_arr,0,N-1);
+		
+		if(N>=3)
+			printf("%d %d %d", i_arr[0],i_arr[1],i_arr[2]);
+		else if(N==2)
+			printf("%d %d", i_arr[0], i_arr[1]);
+		else
+			printf("%d", i_arr[0]);
+		return 0;
+	}
+}
 
 // 잔돈 함수
 int training_10_b(){
@@ -181,6 +183,34 @@ int training_10(){
 	printf("%d",cnt);
 }
 
+
+//파보나치 수
+int training_11(){
+	int F(int n){
+		if(n==1) return 0;
+		if(n==2) return 1;
+
+		int prev1 = 1;
+		int prev2 = 0;
+		int current=0;
+
+		for(int i=3;i<=n;i++){
+			current = (prev1+prev2)%MOD;
+			prev2 = prev1;
+			prev1 = current;
+		}
+		return current;
+	}
+
+
+	int main(){
+		int K;
+		scanf("%d", &K);
+		printf("%d", F(K));
+		return 0;
+	}
+
+}
 
 int main(){
 	training_6();
