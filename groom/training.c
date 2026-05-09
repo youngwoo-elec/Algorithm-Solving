@@ -212,6 +212,39 @@ int training_11(){
 
 }
 
+int training_12(){
+	int visited[1000001] = {0};
+	int main() {
+    int N, M;
+    if (scanf("%d %d", &N, &M) != 2) return 0;
+
+    int collected_count = 0;
+    int card_type;
+    int found = 0;
+
+    for (int i = 1; i <= M; i++) {
+        scanf("%d", &card_type);
+
+        if (visited[card_type] == 0) {
+            visited[card_type] = 1;
+            collected_count++;
+        }
+
+        if (collected_count == N) {
+            printf("%d\n", i);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("-1\n");
+    }
+
+    return 0;
+	}
+}
+
 int main(){
 	training_6();
 	return 0;
