@@ -245,6 +245,21 @@ int training_12(){
 	}
 }
 
+int training_13(){
+	int N;
+	int num=0;
+	scanf("%d", &N);
+	for(int i=1;i<=N;i++){
+		for(int j=1;j<=N;j++){
+			printf("%d",++num);
+			if(j<N)
+				printf(" ");
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
 int main(){
 	training_6();
 	return 0;
